@@ -3,16 +3,13 @@
 <script src="randomColor.min.js"></script>
 <script>
 
-var song = new stasilo.BeatDetector({
-                  sens: 				11.0,
-						 			visualizerFFTSize: 4096,
-									analyserFFTSize:   4096,
-									 passFreq:          600})
+var song = new stasilo.BeatDetector({	sens: 35.0	})
 
 var socket = io('http://lights');
 socket.emit('log', 'Hey lights! I\'m a ' + navigator.appVersion); //identify
 
 window.setInterval(function(){
+  // console.log(song.getAudioFreqData());
   if(song.isOnBeat()){
     ranColor = randomColor({
    			luminosity: 'dark'
@@ -23,7 +20,7 @@ window.setInterval(function(){
   }else{
     //document.getElementsByTagName('body')[0].style.background="#fff"
   };
-}, 20)
+}, 10)
 
 //Colored LOg
 function colorTrace(msg, color) {
