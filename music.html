@@ -1,0 +1,32 @@
+<script src="/beatdetector.js"></script>
+<script src="/socket.io.js"></script>
+<script src="/randomColor.min.js"></script>
+<script>
+
+var song = new stasilo.BeatDetector({
+                  sens: 				11.0,
+						 			visualizerFFTSize: 4096,
+									analyserFFTSize:   4096,
+									 passFreq:          600})
+
+var socket = io('http://lights'); //remove url once on real server!!!!
+socket.emit('log', 'Hey lights! I\'m a ' + navigator.appVersion); //identify
+
+window.setInterval(function(){
+  if(song.isOnBeat()){
+    ranColor = randomColor({
+   			//luminosity: 'dark'
+		})
+
+    document.getElementsByTagName('body')[0].style.background=ranColor
+		socket.emit('dioder', {name: "picker", color: ranColor})
+  }else{
+    //document.getElementsByTagName('body')[0].style.background="#fff"
+  };
+}, 20)
+
+//Colored LOg
+function colorTrace(msg, color) {
+    console.log("%c" + msg, "color:" + color + ";font-weight:bold;");
+}
+</script>
