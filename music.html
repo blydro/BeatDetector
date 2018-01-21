@@ -1,6 +1,6 @@
-<script src="/beatdetector.js"></script>
-<script src="/socket.io.js"></script>
-<script src="/randomColor.min.js"></script>
+<script src="beatdetector.js"></script>
+<script src="socket.io.js"></script>
+<script src="randomColor.min.js"></script>
 <script>
 
 var song = new stasilo.BeatDetector({
@@ -9,13 +9,13 @@ var song = new stasilo.BeatDetector({
 									analyserFFTSize:   4096,
 									 passFreq:          600})
 
-var socket = io('http://lights'); //remove url once on real server!!!!
+var socket = io('http://lights');
 socket.emit('log', 'Hey lights! I\'m a ' + navigator.appVersion); //identify
 
 window.setInterval(function(){
   if(song.isOnBeat()){
     ranColor = randomColor({
-   			//luminosity: 'dark'
+   			luminosity: 'dark'
 		})
 
     document.getElementsByTagName('body')[0].style.background=ranColor
