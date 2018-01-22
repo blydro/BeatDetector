@@ -3,7 +3,7 @@
 <script src="randomColor.min.js"></script>
 <script>
 
-var song = new stasilo.BeatDetector({	sens: 35.0	})
+var song = new stasilo.BeatDetector({	sens: 52.0, passFreq: 30	})
 
 var socket = io('http://lights');
 socket.emit('log', 'Hey lights! I\'m a ' + navigator.appVersion); //identify
