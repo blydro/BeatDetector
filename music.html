@@ -3,7 +3,7 @@
 <script src="randomColor.min.js"></script>
 <script>
 
-var song = new stasilo.BeatDetector({	sens: 100.0, passFreq: 50	})
+var song = new stasilo.BeatDetector({	sens: 120.0, passFreq: 75	})
 
 var socket = io('http://lights');
 socket.emit('log', 'Hey lights! I\'m a ' + navigator.appVersion); //identify
@@ -20,7 +20,7 @@ window.setInterval(function(){
   }else{
     //document.getElementsByTagName('body')[0].style.background="#fff"
   };
-}, 10)
+}, 5)
 
 //Colored LOg
 function colorTrace(msg, color) {
