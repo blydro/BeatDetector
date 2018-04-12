@@ -1,0 +1,22 @@
+{
+  "name": "beatdetector",
+  "version": "1.0.0",
+  "description": "BeatDetector.js =============  --- A pretty rudimentary but working beat detector. Built using the Web audio api. Based on comparing average shift in freq amplitudes in a current sample to a sample history. Catches heavy beat hits pretty accurately (techno, house, hip hop, that kinda stuff)",
+  "main": "run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blydro/BeatDetector.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blydro/BeatDetector/issues"
+  },
+  "homepage": "https://github.com/blydro/BeatDetector#readme",
+  "dependencies": {
+    "puppeteer": "^1.2.0"
+  }
+}
